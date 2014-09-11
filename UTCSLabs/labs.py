@@ -32,9 +32,9 @@ class Command(object):
 	    return True
 
 def main():
-    command = Command("curl -L apps.cs.utexas.edu/unixlabstatus/ > ~/UTCSLabs/labstatus.txt")
+    command = Command("curl -L apps.cs.utexas.edu/unixlabstatus/ > ~/UTCSLabs/UTCSLabs/labstatus.txt")
     success = command.run(timeout=10)
-    path = os.path.expanduser('~/UTCSLabs/labstatus.txt')
+    path = os.path.expanduser('~/UTCSLabs/UTCSLabs/labstatus.txt')
     with open(path) as file:
         while True:
             line = file.readline()
@@ -47,7 +47,7 @@ def main():
                     line = line[pos1:] 
                     pos2 = line.find("<")
                     line = line[1:pos2]
-                    path2 = os.path.expanduser('~/UTCSLabs/ssh.txt')
+                    path2 = os.path.expanduser('~/UTCSLabs/UTCSLabs/ssh.txt')
                     file2 = open(path2, "w")
                     file2.write(line)
                     file2.close() 
